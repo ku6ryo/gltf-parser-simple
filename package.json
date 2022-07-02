@@ -10,12 +10,12 @@
   "author": "Ryo Kuroyanagi",
   "license": "MIT",
   "dependencies": {
+    "@types/three": "^0.141.0",
     "jsonschema": "^1.4.1",
+    "three": "^0.142.0",
     "typescript": "^4.7.4",
     "url": "^0.11.0",
     "vite": "^2.9.13"
   },
-  "devDependencies": {
-    "json-schema-to-typescript": "^11.0.1"
-  }
+  "devDependencies": {}
 }

@@ -32,6 +32,7 @@ import sceneSchema from "./schemas/scene.schema.json"
 import skinSchema from "./schemas/skin.schema.json"
 import textureSchema from "./schemas/texture.schema.json"
 import textureInfoSchema from "./schemas/textureInfo.schema.json"
+import { GlTF } from "./types"
 
 export class JsonValidator {
   validator: Validator
@@ -72,10 +73,11 @@ export class JsonValidator {
     this.validator.addSchema(textureInfoSchema)
   }
 
-  validate(json: any) {
+  validate(json: any): json is GlTF {
     const result = this.validator.validate(json, glTFSchema)
     if (result.errors.length > 0) {
       throw new Error(result.errors[0].message)
     }
+    return true
   }
 }
